@@ -34,7 +34,7 @@
     "space": 2
   },
   "dependencies": {
-    "imgcat": "^2.1.0",
+    "imgcat": "^2.3.0",
     "io-spin": "^0.3.0",
     "meow": "^3.7.0"
   }

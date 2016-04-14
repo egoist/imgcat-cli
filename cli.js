@@ -38,6 +38,9 @@ const events = {
 }
 
 imgcat(file, cli.flags, events)
+  .then(image => {
+    console.log(image)
+  })
   .catch(err => {
     console.log(err.stack)
     process.exit(1)
