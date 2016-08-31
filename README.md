@@ -16,7 +16,7 @@ $ imgcat http://...
 $ imgcat ./path/to/a.gif
 ```
 
-All [imgcat](https://github.com/egoist/imgcat) options can be used here via CLI flags, like `--width 40`
+All [imgcat](https://github.com/egoist/imgcat) options can be used here via CLI flags, like `--width 40px`
 
 ## Related
 
