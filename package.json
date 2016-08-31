@@ -1,6 +1,6 @@
 {
   "name": "imgcat-cli",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "CLI tool to display image in iTerm 2.9+",
   "license": "MIT",
   "repository": "egoist/imgcat-cli",
