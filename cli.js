@@ -42,7 +42,6 @@ const cat = file => imgcat(file, cli.flags, events)
     process.exit(1)
   })
 
-
 let file = cli.input[0]
 if (file) {
   cat(file)
