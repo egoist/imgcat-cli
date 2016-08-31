@@ -3,6 +3,7 @@
 const imgcat = require('imgcat')
 const meow = require('meow')
 const Spin = require('io-spin')
+const getStdin = require('get-stdin')
 
 const spin = new Spin('Box1')
 
@@ -23,11 +24,6 @@ const cli = meow(`
   }
 })
 
-const file = cli.input[0]
-if (!file) {
-  cli.showHelp()
-}
-
 const events = {
   beforeDownload() {
     spin.start()
@@ -37,7 +33,7 @@ const events = {
   }
 }
 
-imgcat(file, cli.flags, events)
+const cat = file => imgcat(file, cli.flags, events)
   .then(image => {
     console.log(image)
   })
@@ -45,3 +41,18 @@ imgcat(file, cli.flags, events)
     console.log(err.stack)
     process.exit(1)
   })
+
+
+let file = cli.input[0]
+if (file) {
+  cat(file)
+} else {
+  getStdin().then(data => {
+    if (data) {
+      file = data.trim()
+      cat(file)
+    } else {
+      cli.showHelp()
+    }
+  })
+}
